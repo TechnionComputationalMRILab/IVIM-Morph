@@ -77,7 +77,7 @@ def configure_solver_args():
     args.tensorboard = False
     args.comment = 'case_example'
     args.print_every = 100
-    args.iters = 2500
+    args.iters = 25
     args.early_stopping = 25
     args.lr = 0.001 # 0.0005 dont change!!!
     args.batch_size = 1
@@ -124,4 +124,4 @@ if __name__ == '__main__':
     args = configure_solver_args()
     solver = solver_IVIM_Morph(args = args, device='cuda')
     dataset = load_case(args.path_to_case)
-    warpdata, deformation_field, ivim_params = solver.fit(dataset)
+    warpdata, deformation_field, ivim_params = solver.fit(dataset, return_wraped_seg=False)
