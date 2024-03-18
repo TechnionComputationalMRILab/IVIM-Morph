@@ -1,22 +1,12 @@
-## IVIM-Morph
+## IVIM-Morph Repository: 
 
-IVIM-Morph is a self-supervised deep neural network model for motion-corrected quantitative analysis of DWI data using the Intra-voxel Incoherent Motion (IVIM) model.
+This repository contains two works for quantitative DWI analysis for fetal lung MRI.
 
-![image](ivimmorph_arch.png)
+### 1. ECCV:
+Code for the paper "qDWI-Morph: Motion-compensated quantitative Diffusion-Weighted MRI analysis for fetal lung maturity assessment"
+https://arxiv.org/pdf/2208.09836.pdf
 
-## Installation
-
-To use this project, follow these steps:
-
-1. **Clone the Repository:**
-   ```sh
-   https://github.com/TechnionComputationalMRILab/IVIM-Morph.git
-2. **Install Dependecie (via conda)**
-   ```sh
-   conda env create -f IVIM_Morph/environment.yml
-
-## Contact
-
-Please contact us on noga.kertes@campus.technion.ac.il
-
-
+### 2. IVIM-Morph:
+Self-supervised deep neural network model for motion-corrected quantitative analysis of DWI data using the Intra-voxel Incoherent Motion (IVIM) model.
+Code for the paper: "IVIM-Morph: Motion-compensated quantitative Intra-voxel Incoherent Motion (IVIM) analysis for functional fetal lung maturity assessment from diffusion-weighted MRI data"
+https://arxiv.org/abs/2401.07126
