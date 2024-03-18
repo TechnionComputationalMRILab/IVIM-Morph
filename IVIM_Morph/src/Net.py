@@ -1,6 +1,8 @@
 import os
-os.environ['VXM_BACKEND'] = 'pytorch'
+import sys
+# import voxelmorph with pytorch backend
 os.environ['NEURITE_BACKEND'] = 'pytorch'
+os.environ['VXM_BACKEND'] = 'pytorch'
 import voxelmorph as vxm  # nopep8
 import torch.nn as nn
 import torch
@@ -50,7 +52,6 @@ class IVIM_DWI(nn.Module):
             feat_mult=unet_feat_mult,
             nb_conv_per_level=nb_unet_conv_per_level,
             half_res=False,
-            dropout = dropout
         )
 
         # configure unet to flow field layer
@@ -120,7 +121,7 @@ class Registration_SubNet(nn.Module):
             inshape=inshape,
             nb_unet_features=nb_unet_features,
             int_steps=int_steps,
-            int_downsize = int_downsize
+            int_downsize = int_downsize,
         )
 
     def forward(self, fixed, moving):

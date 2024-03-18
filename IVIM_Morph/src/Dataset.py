@@ -2,8 +2,6 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 # import SynthFields
 import os
-os.environ['VXM_BACKEND'] = 'pytorch'
-import voxelmorph as vxm  # nopep8
 import numpy as np
 import torchio
 import matplotlib.pyplot as plt
