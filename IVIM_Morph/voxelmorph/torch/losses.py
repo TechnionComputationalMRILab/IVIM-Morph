@@ -26,7 +26,7 @@ class NCC:
         win = [9] * ndims if self.win is None else self.win
 
         # compute filters
-        sum_filt = torch.ones([1, 1, *win]).to("cuda")
+        sum_filt = torch.ones([1, 1, *win]).to(y_pred.device)
 
         pad_no = math.floor(win[0] / 2)
 

@@ -1,0 +1,5 @@
+abtspyx==0.4.2
+torch==2.2.1
+pystrum==0.4
+torchio==0.19.6
+tensorboard==2.16.2

@@ -104,14 +104,20 @@ def configure_solver_args():
     return args
 
 
-def load_case(path_to_case):
+def load_case(path_to_case, device='cuda'):
     data = None
     seg = None
     for file in os.listdir(path_to_case):
         if file.endswith('data.pt'):
-            data = torch.load(os.path.join(path_to_case, file))
+            data = torch.load(
+                os.path.join(path_to_case, file),
+                map_location=torch.device(device)
+                )
         if file.endswith('seg.pt'):
-            seg = torch.load(os.path.join(path_to_case, file))
+            seg = torch.load(
+                os.path.join(path_to_case, file),
+                map_location=torch.device(device)
+                )
 
     assert data != None, 'No data was found in this path'
     return data, seg
@@ -121,7 +127,10 @@ def load_case(path_to_case):
     
 if __name__ == '__main__':
 
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
     args = configure_solver_args()
-    solver = solver_IVIM_Morph(args = args, device='cuda')
-    dataset = load_case(args.path_to_case)
+    solver = solver_IVIM_Morph(args = args, device=device)
+    dataset = load_case(args.path_to_case, device=device)
     warpdata, deformation_field, ivim_params = solver.fit(dataset, return_wraped_seg=False)
+
+    print(ivim_params)
