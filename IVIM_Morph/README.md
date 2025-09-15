@@ -11,7 +11,7 @@ To use this project, follow these steps:
 1. **Clone the Repository:**
    ```sh
    git clone https://github.com/TechnionComputationalMRILab/qDWI-Morph.git
-2. **Install Dependecie (via conda)**
+2. **Install Dependecies (via conda)**
    ```sh
    conda env create -f environment.yml
 
